@@ -1,0 +1,401 @@
+/*Rain Machine Code for CSS Starts*/
+body{
+	background: #0f0f12;
+	font-family:sans-serif;
+	letter-spacing: 2px;
+	margin:0;
+	padding:0;
+	text-transform: uppercase;
+	font-size:.8rem;
+}
+
+body.dusk{
+	background: #0e1026; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #2e1526 , #0e1026); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #2e1526 , #0e1026); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.svg{
+
+	width:100%;
+}
+
+.svg-container{
+	height:100vh;
+	width:100%;
+	float:left;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	
+	position: relative;
+}
+
+.controls{
+	position: absolute;
+	z-index:1;
+	margin-top:20px;
+}
+
+.type-of-control{
+	margin:20px 0 20px 30px;
+	padding:10px;
+}
+
+.control-single{
+	display:inline-block;
+}
+
+label{
+	color:rgba(255,255,255,.5);
+	margin-right:20px;
+	padding:10px;
+	border:1px solid rgba(255,255,255,.0);
+	transition:all .2s;
+}
+
+label.highlighted{
+	color:rgba(255,255,255,.95);
+	font-weight:bold;
+	border:1px solid white;
+}
+
+button{
+    color:#333;
+    background-color: rgba(255,255,255,.7);
+    padding: 10px;
+    border:1px solid rgba(255,255,255,.0);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font: .8rem system-ui;
+    font-weight:bold;
+    transition: all .2s
+}
+
+input{
+	display: none;
+}
+
+input:hover, 
+button:hover,
+label:hover{
+	cursor:pointer;
+}
+
+button:hover{
+	color:black;
+	background-color: rgba(255,255,255,.9);
+	border:1px solid rgba(255,255,255,.0);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.0);
+    border-image: initial;
+}
+
+label:hover{
+	background-color: rgba(255,255,255,.1)
+}
+
+svg#rain-back,
+svg#rain-middle,
+svg#rain-forward{
+	position: absolute;
+}
+
+.text{
+	color:rgba(255,255,255,.5);
+	font-family: sans-serif;
+	letter-spacing: 5px;
+	font-size:20px;
+}
+
+/*lightning lines*/
+#one{
+  stroke-dasharray: 571;
+  opacity: 0;
+}
+
+#one.bolt-active{
+  animation:animationone .25s 0s 3 linear;
+}
+
+#two{
+	stroke-dasharray: 641.24;
+	opacity: 0;
+}
+
+#two.bolt-active{
+	animation: animationtwo .25s 0s 3 linear;
+}
+
+#three{
+	stroke-dasharray: 366.74;
+	opacity: 0;
+}
+
+#three.bolt-active{
+	animation:animationthree .25s 0s 3 linear;
+}
+
+#four{
+	stroke-dasharray: 197.63;
+	opacity: 0;
+}
+
+#four.bolt-active{
+	animation:animationfour .25s 0s 2 linear;
+}
+
+#five{
+	stroke-dasharray: 159.93;
+	opacity: 0;
+}
+
+#five.bolt-active{
+	animation:animationfive .25s 0.3s 3 linear;
+}
+
+#six{
+	stroke-dasharray: 819.26;
+	opacity: 0;
+}
+
+#six.bolt-active{
+	animation:animationsix .35s 0s 3 linear;
+}
+
+#seven{
+	stroke-dasharray: 417.92;
+	opacity: 0;
+}
+
+#seven.bolt-active{
+	animation:animationseven .25s .2s 1 linear;
+}
+
+body.bolt-active {
+	animation:pop .4s .2s 2 cubic-bezier(0,.94,.73,1);
+}
+
+body.dusk.bolt-active{
+	animation:popdusk .4s .2s 2 cubic-bezier(0,.94,.73,1);
+}
+
+/*raindrops*/
+#svg_1,
+#svg_2,
+#svg_3,
+#svg_4,
+#svg_5,
+#svg_6,
+#svg_7,
+#svg_8,
+#svg_9,
+#svg_10,
+#svg_11,
+#svg_12,
+#svg_13,
+#svg_14,
+#svg_15,
+#svg_16,
+#svg_17,
+#svg_18,
+#svg_19,
+#svg_20,
+#svg_21{
+	opacity: 0;
+}
+
+#svg_11.animated,
+#svg_7.animated,
+#svg_20.animated{
+	animation: fall 0.5s linear infinite;
+	opacity: 1;
+}
+
+#svg_9.animated,
+#svg_16.animated,
+#svg_18.animated,
+#svg_13.animated{
+	animation: fall .8s linear infinite;
+	opacity: 1;
+}
+
+#svg_8.animated,
+#svg_14.animated,
+#svg_15.animated{
+	animation: fall 1.2s linear infinite;
+	opacity: 1;
+}
+
+#svg_6.animated,
+#svg_21.animated,
+#svg_2.animated,
+#svg_10.animated{
+	animation: fall 1.6s linear infinite;
+	opacity: 1;
+}
+
+#svg_12.animated,
+#svg_1.animated,
+#svg_19.animated,
+#svg_3.animated{
+	animation: fall 1.8s linear infinite;
+	opacity: 1;
+}
+
+#svg_4.animated,
+#svg_17.animated,
+#svg_5.animated{
+	animation: fall 2.1s linear infinite;
+	opacity: 1;
+}
+
+#rain-forward #svg_4.animated,
+#rain-forward #svg_12.animated{
+	animation: fall .2s linear infinite;
+	opacity:1;
+}
+
+#rain-forward #svg_14.animated,
+#rain-forward #svg_2.animated,
+#rain-forward #svg_9.animated{
+	animation: fall .4s linear infinite;
+	opacity:1;
+}
+
+#rain-forward #svg_17.animated,
+#rain-forward #svg_3.animated,
+#rain-forward #svg_1.animated{
+	animation: fall .6s linear infinite;
+	opacity:1;
+}
+
+#rain-forward #svg_5.animated,
+#rain-forward #svg_7.animated,
+#rain-forward #svg_10.animated{
+	animation: fall 1s linear infinite;
+	opacity:1;
+}
+
+#rain-forward #svg_6.animated,
+#rain-forward #svg_8.animated,
+#rain-forward #svg_11.animated{
+	animation: fall 1.5s linear infinite;
+	opacity:1;
+}
+
+@keyframes animationone {
+	from{
+		stroke-dashoffset:571;
+		opacity: 0;
+	}
+
+	to {
+	    stroke-dashoffset: 0;
+	    opacity: 1;
+	 }
+}
+
+@keyframes animationtwo{
+	from{
+		stroke-dashoffset: 641.24;
+		opacity: 0;
+	}
+	to{
+		stroke-dashoffset: 0;
+		 opacity: 1;
+	}
+}
+
+@keyframes animationthree{
+	from{
+		stroke-dashoffset: 366.74;
+		opacity: 0;
+	}
+	to{
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animationfour{
+	from{
+		stroke-dashoffset: 197.63;
+		opacity: 0;
+	}
+	to{
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animationfive{
+	from{
+		stroke-dashoffset: 159.93;
+		opacity: 0;
+	}
+	to{
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animationsix{
+	from{
+		stroke-dashoffset: 819.26;
+		opacity: 0;
+	}
+	to{
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animationseven{
+	from{
+		stroke-dashoffset: 417.92;
+		opacity: 0;
+	}
+	to{
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes pop{
+	from{
+		background:#0f0f12;
+	}
+	to{
+		background:  #211d23;
+	}
+}
+
+@keyframes popdusk{
+	to{
+		background: rgba(0,0,0,.9); /* fallback for old browsers */
+	    background: -webkit-linear-gradient(bottom, #ffb366, rgba(0,0,30,.9));
+    	background: -o-linear-gradient(bottom, #ffb366, rgba(0,0,30,.9));
+	    background: linear-gradient(to top, #ffb366, rgba(0,0,30,.9)); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+
+}
+
+@keyframes fall {
+	  from {
+	    transform:translateY(-200px);
+	  }
+	  to {
+	  	 transform:translateY(400px);
+	  }
+}
+
+@media(max-width:767px){
+	.control-single{
+		display:block;
+		margin-bottom:30px;
+	}
+}
+/*Rain Machine Code for CSS Ends*/
